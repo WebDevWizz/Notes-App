@@ -34,7 +34,6 @@ struct NoteDetailView: View {
         }
         .padding()
         .toolbar {
-            //TODO: Aggiunta Button per la modifica della nota
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Edit") {
                     showEditView = true

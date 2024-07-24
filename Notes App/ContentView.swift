@@ -25,18 +25,9 @@ struct ContentView: View {
                 (search.isEmpty || note.title.localizedCaseInsensitiveContains(search))
             }
         }
-    /*var filteredNotes : [Note] {
-        if search.isEmpty {
-            return myData.notes
-        } else {
-            return myData.notes.filter{
-                note in
-                note.title.localizedCaseInsensitiveContains(search)
-            }
-        }
-    }*/
     
-    //TODO: GRIGLIA PER LE NOTE:
+    
+    //GRIGLIA PER LE NOTE:
     var columns: [GridItem] = [
         GridItem(.flexible(), spacing: 40),
         GridItem(.flexible(), spacing: 40)
@@ -44,7 +35,6 @@ struct ContentView: View {
     
     //---------------
     
-    //BODY:
     
     var body: some View {
         NavigationStack{
@@ -53,15 +43,12 @@ struct ContentView: View {
                     
                     //Categorie di note
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 30){ //Mette una distanza di 30 punti tra gli elementi nel HStack
+                        HStack(spacing: 30){
                             
                             //TODO: SETTARE IL FILTRAGGIO SUI BOTTONI
                             
                             ForEach(myData.categories) { category in
                                 Button(action: {
-                                    
-                                    // Azione da eseguire quando si clicca una categoria
-                                    // TODO: Settare il filtraggio delle note in base alla categoria
                                     selectedCategory = category
                                 }) {
                                         RoundedRectangle(cornerRadius: 60)
@@ -77,7 +64,6 @@ struct ContentView: View {
                                 }
                             
                             Button(action: {
-                                //TODO: CODE TO ADD CATEGORIES
                                 ShowAddCategory = true //Per collegarlo con lo sheet AddCategory
                             }){
                                 RoundedRectangle(cornerRadius: 60)
@@ -95,15 +81,12 @@ struct ContentView: View {
                         }
                         .padding(.horizontal)
                         .padding(.top)
-                        //End HStack
-                    } //End ScrollView
+                       
+                    }
 
                     Spacer()
                     
-                    //TODO: CODICE PER LA VISUALIZZAZIONE DELLE NOTE NELLA HOME ("ALL")
-                            
-                    
-                    
+
                     ScrollView{
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
                             ForEach(filteredNotes, id: \.self) {
@@ -143,7 +126,7 @@ struct ContentView: View {
                              .foregroundColor(.black)
                             }
                     }
-                } //end toolbar
+                }
         
                         
             

@@ -30,10 +30,7 @@ struct AddCategoryView: View {
                         }
                     }
                 }
-            
-            
-            
-        } //End NavStack
+        }
     }
 }
 

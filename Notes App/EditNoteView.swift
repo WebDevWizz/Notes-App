@@ -12,10 +12,6 @@ struct EditNoteView: View {
     @Binding var note: Note
     @ObservedObject var myData: SharedData
     @Environment(\.presentationMode) var presentationMode
-   // @Binding var isPresented: Bool
-    
-    //Il problema è che 'note' è dichiarata State --> ecco perché non vengono salvate le modifiche.
-    //==> Binding
     
     var body: some View {
         VStack {
@@ -35,7 +31,6 @@ struct EditNoteView: View {
             }
             
             Button(action: {
-               //TODO: METTI FUNZIONE PER ELIMINARE NOTA
                 myData.deleteNote(note: note)
                 presentationMode.wrappedValue.dismiss()
             }) {

@@ -28,7 +28,7 @@ struct AddNoteView: View {
                         .foregroundColor(.black).bold()
                         .font(.system(size: 42))
                     
-                    //Description (TextEditor per wrapping automatico, ovvero andare a capo quando si scrive)
+                    //TextEditor per wrapping automatico, ovvero andare a capo quando si scrive
                     TextEditor(text: $newdescription)
                         .padding(.horizontal)
                     
@@ -46,8 +46,8 @@ struct AddNoteView: View {
                 .toolbar{
                     ToolbarItem {//toolbar elements
                         Button(action: {
-                            //TODO: IMPLEMENTARE L'AZIONE PER ELENCO PUNTATO --> CAMBIA L'IMMAGINE
-                            //Una volta che ci clicco sopra, viene visualizzata una View per poter aggiungere la nota ad una determinata categoria
+                            //TODO: IMPLEMENTARE L'AZIONE PER ELENCO PUNTATO
+                            //TODO: Una volta che ci clicco sopra, viene visualizzata una View per poter aggiungere la nota ad una determinata categoria
                             
                             
                         }, label: {
@@ -61,14 +61,10 @@ struct AddNoteView: View {
                         })
                     }
                     
-                }//end toolbar
+                }
                 .navigationBarItems(leading: Button(action: {
                     addNote()
-                   // myData.addNoteToServer(note: newNote)
-                    // Esegui l'azione di ritorno
                     presentationMode.wrappedValue.dismiss()
-                    
-                    //TODO: METTERE LA FUNZIONE PER AGGIUNGERE UNA NOTA AL SERVER
                     
                 }) {
                         Image(systemName: "chevron.backward.circle.fill")
@@ -80,7 +76,7 @@ struct AddNoteView: View {
                 
             }
             
-        } //End Nav
+        } 
         
     }
     
